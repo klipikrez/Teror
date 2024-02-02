@@ -1,1 +1,49 @@
-<h1>bob?</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./container.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <h1>‎ ‎ ‎ BOB?</h1>
+        <h3>Custom Map</h3>
+        <img id="bob" src="./media/map.png" alt="::::" />
+        <!-- The div element for the map -->
+        <div id="map"></div>
+      </main>
+      <div class="overlay"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map("map").setView([0, 80], 2); // Center the map at [0, 0] with zoom level 1
+
+        L.tileLayer("./media/poker.png", {
+          attribution: "© BOB",
+        }).addTo(map);
+
+        // Add a custom image overlay
+        L.imageOverlay("./media/55579313.png", [
+          [-90, -175],
+          [600, 300], // Adjust these coordinates based on your image size
+        ]).addTo(map);
+      });
+    </script>
+  </body>
+</html>
